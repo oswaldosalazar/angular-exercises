@@ -1,0 +1,15 @@
+.symbols {
+    font-size: xx-large;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+.passwordDefault {
+    color: red;
+}
+
+.passwordGood {
+    color: green;
+}

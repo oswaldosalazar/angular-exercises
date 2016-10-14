@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="controller">
+    <head>
+        <meta charset="utf-8">
+        <title>Ex5</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>Camera Shop</h1>
+
+        <select ng-model="sortOption" ng-init="sortOption='price'" >
+            <option value="price">Price</option>
+            <option value="rating">Rating</option>
+        </select>
+
+        <div ng-repeat=" camera in cameras | orderBy:sortOption:true ">
+
+            <h2>{{ camera.title }}</h2>
+            <div class="priceColor">
+                <h3 ng-class="{salePriceColor: camera.onSale == true}" >Price: {{ camera.price | currency }} <span ng-show="camera.onSale ==true">ON SALE!!</span> </h3>
+            </div>
+            <h4>Rating: {{ camera.rating }}</h4>
+            <br>
+            <div >
+                <img class="imageSize" ng-src="{{ camera.image }}"></img>
+            </div>
+        </div>
+
+        <!-- names -->
+
+        <!-- <div ng-init="names = ['Harry', 'Ron', 'Hermione', 'Sirius', 'Hedwig', 'Tonks']">
+            <ul >
+                <li ng-repeat="name in names">
+                    {{ name }}
+                </li>
+            </ul>
+        </div> -->
+
+        <!-- symbols -->
+
+        <!-- <div class="symbols" ng-init="symbols = ['♠', '♣', '♥', '♦']">
+            <ul >
+                <li ng-repeat="symbol in symbols">
+                    {{ symbol }}
+                </li>
+            </ul>
+        </div> -->
+
+        <!-- array with duplicates -->
+
+        <!-- <div>
+            <ul >
+                <li ng-repeat="number in numbers track by $index">
+                    {{ number }}
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <ul >
+                <li ng-repeat="number in filteredNumbers">
+                    {{ number }}
+                </li>
+            </ul>
+        </div> -->
+
+        <!-- iterate through attributes -->
+
+        <!-- <div>
+            <ul >
+                <li ng-repeat="elem in first">
+                    {{ elem }}
+                </li>
+            </ul>
+            <ul >
+                <li ng-repeat="user in second">
+                    <strong>{{ user.name }}</strong> {{ user.age }}
+                </li>
+            </ul>
+            <ul >
+                <li ng-repeat="attr in third">
+                    {{ attr }}
+                </li>
+            </ul>
+            <ul >
+                <li ng-repeat="number in fourth track by $index">
+                    {{ number }}
+                </li>
+            </ul>
+        </div> -->
+
+        <!-- ng-show/hide -->
+
+        <!-- <div ng-show="3 + 4 == 5">
+            3 + 4 isn't 5, don't show
+        </div>
+        <div ng-show="3 + 4 == 7">
+            3 + 7 is 7, do show
+        </div>
+        <div ng-hide="3 + 4 == 5">
+            3 + 4 isn't 5, don't hide
+        </div>
+        <div ng-hide="3 + 4 == 7">
+            3 + 4 is 7, do hide
+        </div> -->
+
+        <!-- password validator -->
+
+        <!-- <h1>Sign up page</h1>
+        <input type="password" ng-model="password" ng-init="password = ''">
+        <h3>Your password is {{ password.length }} characters</h3>
+        <div ng-show="password.length < 6">
+            <h3>Password is invalid!</h3>
+        </div>
+        <div ng-hide="password.length < 6">
+            <input type="button" name="name" value="Sign Up!">
+        </div> -->
+
+        <!-- ng-class -->
+
+        <!-- <div ng-class='{highlight: 4 + 4 == 8}'> 4 + 4 = 8</div>
+        <div ng-class='{highlight: 4 + 4 == 10}'>4 + 4 = 10</div>
+
+        <h1>Sign up page</h1>
+        <input type="password" ng-model="password" ng-init="password = ''">
+        <div class="passwordDefault">
+            <div ng-class="{passwordGood: password.length >= 6}">
+                <h3>Your password is {{ password.length }} characters</h3>
+            </div>
+        </div>
+        <div ng-show="password.length < 6">
+            <h3>Password is invalid!</h3>
+        </div>
+        <div ng-hide="password.length < 6">
+            <input type="button" name="name" value="Sign Up!">
+        </div> -->
+
+
+
+
+
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+</html>

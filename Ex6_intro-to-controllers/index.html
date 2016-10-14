@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="firstApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Ex6</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://use.typekit.net/tdh2twx.js"></script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <!-- easy tasks -->
+
+        <!-- <div ng-controller="MyFirstController">
+            <h1>My name is: {{ name }}</h1>
+            <input type="text" ng-model="name" placeholder="What is your name">
+        </div>
+
+        <div ng-controller="ExerciseController">
+            <h1 ng-style="{color: FavColor}" >{{ FavColor }}</h1>
+            <h3>{{ secondsInACentury }}</h3>
+            <h3>{{ rightNow | date : 'EEEE, MMMM d, y' }}</h3>
+        </div> -->
+
+        <!-- madlibs with controller -->
+
+        <div ng-controller="MadLibs">
+
+            <form class="form-horizontal">
+                <h1>Please fill out the following!</h1>
+                <div class="form-group">
+                    <label for="boySName" class="col-xs-2 control-label">Boy's Name</label>
+                    <div class="col-xs-6">
+                        <input ng-model="boySName" type="text" class="form-control" id="boySName" placeholder="Enter a boy's name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="adjective" class="col-xs-2 control-label">Adjective</label>
+                    <div class="col-xs-6">
+                        <input ng-model="adjective" type="text" class="form-control" id="adjective" placeholder="Enter an Adjective">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pluralNoun1" class="col-xs-2 control-label">Plural Noun</label>
+                    <div class="col-xs-6">
+                        <input ng-model="pluralNoun1" type="text" class="form-control" id="pluralNoun1" placeholder="Enter plural noun">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pluralNoun2" class="col-xs-2 control-label">Plural Noun</label>
+                    <div class="col-xs-6">
+                        <input ng-model="pluralNoun2" type="text" class="form-control" id="pluralNoun2" placeholder="Enter plural noun">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="insectPlural" class="col-xs-2 control-label">An insect, plural</label>
+                    <div class="col-xs-6">
+                        <input ng-model="insectPlural" type="text" class="form-control" id="insectPlural" placeholder="Enter an insect, plural">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pluralNoun3" class="col-xs-2 control-label">Plural Noun</label>
+                    <div class="col-xs-6">
+                        <input ng-model="pluralNoun3" type="text" class="form-control" id="pluralNoun3" placeholder="Enter plural noun">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="verbEndingS" class="col-xs-2 control-label">A verb ending in "s"</label>
+                    <div class="col-xs-6">
+                        <input ng-model="verbEndingS" type="text" class="form-control" id="verbEndingS" placeholder="Enter a verb ending in "s"">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button class="btn btn-danger" ng-click="ShowHide()">Generate</button>
+                    </div>
+                </div>
+                <div ng-show="IsVisible">
+                    <h1>Mad with the Libs</h1>
+
+                    <h3>I'm in love with <span>{{ boySName | uppercase }}</span>. He's so <span>{{ adjective | uppercase }}</span>! He has big flat <span>{{ pluralNoun1 | uppercase }}</span>, and when our <span>{{ pluralNoun2 | uppercase }}</span> meet, I get <span>{{ insectPlural | uppercase }}</span> in my stomach. I've fallen for him like a ton of <span>{{ pluralNoun3 | uppercase }}</span>, and he <span>{{ verbEndingS | uppercase }}</span> for me, too. But I think he's got another girlfriend. What should I do?</h3>
+                    <button class="btn btn-danger" type="reset" ng-click="ShowHideAndEmpty()">Play again!</button>
+                </div>
+            </form>
+        </div>
+
+    </body>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script   src="http://code.jquery.com/jquery-3.1.1.slim.min.js"   integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="   crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+</html>

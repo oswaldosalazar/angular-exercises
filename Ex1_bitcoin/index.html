@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html ng-app="bitcoinCalculator" ng-controller="bitcoinController">
+    <head>
+        <title>Bitcoin Investment Calculator</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- stylesheets -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/yeti/bootstrap.min.css" rel="stylesheet" integrity="sha384-HzUaiJdCTIY/RL2vDPRGdEQHHahjzwoJJzGUkYjHVzTwXFQ2QN/nVgX7tzoMW3Ov" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.css">
+        <link rel="stylesheet" href="style.css" media="screen" title="no title">
+        <script src="https://use.typekit.net/tdh2twx.js"></script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    </head>
+    <body>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>Bitcoin Investment <br> Calculator</h1>
+                    <br><br>
+                    <form role="form">
+                        <label for="starting-investment">Initial Investment (USD)</label>
+                        <input type="number" ng-model="initialAmt" class="form-control" placeholder="{{initialAmt}}">
+                    </form>
+                    <br><br>
+                    <p>Current Price (USD): <span class="number">{{ currRate | currency }}</span></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <!-- <nvd3-historical-bar-chart height="350" data="exampleData" showXAxis="true" showYAxis="true" showLegend="true">
+                    </nvd3-historical-bar-chart> -->
+                    <nvd3-line-chart
+                        data="bitcointHistoricalData"
+                        xAxisTickFormat="xAxisTickFormatFunction()"
+                        height="350"
+                        showXAxis="true"
+                        showYAxis="true"
+                        isArea="true"
+                        useInteractiveGuideLine="true">
+                    <svg></svg>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-7">
+                <br><br>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Price of 1 BTC</th>
+                            <th>Starting Investment</th>
+                            <th>Profit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$1,000</td>
+                            <td>{{ newAmt(1000) | currency }}</td>
+                            <td>{{ profit(1000) | currency }}</td>
+                        </tr>
+                        <tr>
+                            <td>$5,000</td>
+                            <td>{{ newAmt(5000) | currency }}</td>
+                            <td>{{ profit(5000) | currency }}</td>
+                        </tr>
+                        <tr>
+                            <td>$10,000</td>
+                            <td>{{ newAmt(10000) | currency }}</td>
+                            <td>{{ profit(10000) | currency }}</td>
+                        </tr>
+                        <tr>
+                            <td>$25,000</td>
+                            <td>{{ newAmt(25000) | currency }}</td>
+                            <td>{{ profit(25000) | currency }}</td>
+                        </tr>
+                        <tr>
+                            <td>$50,000</td>
+                            <td>{{ newAmt(50000) | currency }}</td>
+                            <td>{{ profit(50000) | currency }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <span>* IF the price of 1 Bitcoin reaches X, THEN your starting investment becomes X and your profit becomes X.</span>
+            </div>
+            <div class="col-sm-5">
+                <img src="img/btc.png" width="200" />
+            </div>
+        </div>
+    </body>
+    <script   src="https://code.jquery.com/jquery-3.1.1.slim.min.js"   integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="   crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-nvd3-directives/0.0.7/angularjs-nvd3-directives.min.js"></script>
+    <script src="app.js"></script>
+    <script src="bitcoinController.js"></script>
+</html>

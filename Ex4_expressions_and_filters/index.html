@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Hello, World!</title>
+    </head>
+    <body>
+        <div ng-controller="myController">
+
+            <!-- easy exercises -->
+
+            <!-- <h1>{{ example.sum }}</h1>
+            <h2>My name is {{ example.firstName }} {{ example.secondName }}.</h2>
+            <h3>The array {{ example.array }} is {{ example.length }} items long.</h3>
+            <h2>Please say something:</h2>
+            <input type="text" ng-model="example.something">
+            <h3>Yelling: {{ example.something | uppercase }}</h3>
+            <h3>Whispering: <i>{{ example.something }}</i></h3> -->
+
+            <!-- pi digits -->
+
+            <!-- <h4>{{ example.pi }}</h4>
+            <h4>How many digits of pi do you need?
+            <select ng-model="example.decimal" ng-init="example.decimal = 0">
+                <option ng-repeat="elem in example.decimals" value="{{elem}}">{{ elem }}</option>
+            </select>
+            </h4>
+            <ng-pluralize
+                count="example.decimal"
+                when="{
+                    '0': 'Here you go! The first {} digits of pi!',
+                    'one': 'Here you go! The first {} digit of pi!',
+                    'other': 'Here you go! The first {} digits of pi!',
+                }">
+            </ng-pluralize>
+            <h4>{{ example.pi | number:example.decimal }}</h4> -->
+
+            <!-- tip calculator -->
+
+            <!-- <p>How much did your meal cost?
+                <input type="number" ng-model="cost">
+            </p>
+            <p>How much do you want to tip?
+                <select ng-model="tipPercentage">
+                    <option ng-repeat = "percentage in example.percentages" value="{{percentage.value}}">{{ percentage.id }}</option>
+                </select>
+            </p>
+            <h3>Subtotal: {{ cost | currency }}</h3>
+            <h3>Tip: {{ cost * tipPercentage | currency }}</h3> -->
+
+            <!-- madlibs -->
+
+            <label for="boysName">Boy's Name</label><br>
+            <input id="boysName" type="text" ng-model="boysName" value="" placeholder="Enter boy's name"><br>
+
+            <label for="adjective">Adjective</label><br>
+            <input id="adjective" type="text" ng-model="adjective" value="" placeholder="Enter an adjective"><br>
+
+            <label for="pluralNoun1">Plural Noun</label><br>
+            <input id="pluralNoun1" type="text" ng-model="pluralNoun1" value="" placeholder="Enter a plural noun"><br>
+
+            <label for="pluralNoun2">Plural Noun</label><br>
+            <input id="pluralNoun2" type="text" ng-model="pluralNoun2" value="" placeholder="Enter a plural noun"><br>
+
+            <label for="insectPlural">An insect, plural</label><br>
+            <input id="insectPlural" type="text" ng-model="insectPlural" value="" placeholder="Enter an insect, plural"><br>
+
+            <label for="pluralNoun3">Plural Noun</label><br>
+            <input id="pluralNoun3" type="text" ng-model="pluralNoun3" value="" placeholder="Enter a plural noun"><br>
+
+            <label for="verbEndingS">A verb ending in "s"</label><br>
+            <input id="verbEndingS" type="text" ng-model="verbEndingS" value="" placeholder="Enter a verb ending in "s" ">
+
+            <h3>I'm in love with <span>{{ boysName | uppercase }}</span>. He's so <span>{{ adjective | uppercase }}</span>! He has big flat <span>{{ pluralNoun1 | uppercase }}</span>, and when our <span>{{ pluralNoun2 | uppercase }}</span> meet, I get <span>{{ insectPlural | uppercase }}</span> in my stomach. I've fallen for him like a ton of <span>{{ pluralNoun3 | uppercase }}</span>, and he <span>{{ verbEndingS | uppercase }}</span> for me, too. But I think he's got another girlfriend. What should I do?</h3>
+
+        </div>
+
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+</html>

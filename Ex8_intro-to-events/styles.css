@@ -1,0 +1,31 @@
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "gesta",sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+
+p, div, legend {
+    font-family: "gesta",sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.jumbotron {
+    text-align: center;
+    border-style:solid;
+    border-color: white;
+    background-color: lightblue;
+    height:300px;
+}
+
+.win {
+    background-color: lightgreen;
+}
+
+.lose {
+    background-color: red;
+}
+
+.reset {
+    background-color: lightblue;
+}

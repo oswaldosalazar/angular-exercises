@@ -1,0 +1,32 @@
+body {
+    padding: 10px;
+}
+
+.jumbotron {
+    height: 100%;
+    margin-bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "gesta",sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+
+p, div {
+    font-family: "gesta",sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.number {
+    font-weight: bold;
+}
+
+label, table {
+    font-size: 15px;
+}
+
+input{
+    max-width: 200px;
+}

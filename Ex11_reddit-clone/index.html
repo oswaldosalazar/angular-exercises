@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ex11</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://use.typekit.net/tdh2twx.js"></script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body ng-app="myApp">
+        <div ng-controller="postsController">
+
+        <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand">Reddit Clone</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a class="btn" ng-click="showSubmitPost()">+ Submit Post</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" ng-model="list.search">
+        </div>
+
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+            <form ng-show="list.enterPost" class="container form-horizontal" ng-submit="addPost()">
+                <fieldset>
+                    <div class="form-group">
+                        <label for="title" class="col-lg-2 control-label">Title</label>
+                        <div class="">
+                            <input name="title" type="text" class="form-control col-lg-10" id="title" placeholder="Title" ng-model="newPost.title" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="author" class="col-lg-2 control-label">Author</label>
+                        <div class="">
+                            <input name="author" type="text" class="form-control col-lg-10" id="author" placeholder="Author" ng-model="newPost.author" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="imageUrl" class="col-lg-2 control-label">Image URL</label>
+                        <div class="">
+                            <input name="imageUrl" type="text" class="form-control col-lg-10" id="imageUrl" placeholder="Image URL" ng-model="newPost.imageUrl" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="description" class="col-lg-2 control-label">Description</label>
+                        <div class="">
+                            <input name="description" type="text" class="form-control col-lg-10" id="description" placeholder="Description" ng-model="newPost.description" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-2">
+                                <button type="reset" class="btn btn-default">Cancel</button>
+                                <button type="submit" class="btn btn-primary" ng-click="showSubmitPost()">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+
+            <div ng-repeat="item in list">
+                <div class="jumbotron">
+                    <img src="{{ item.imageUrl }}" alt="Mountains" />
+                    <h3>{{ item.title }}</h3>
+                    <h4>{{ item.author }}</h4>
+                    <h6>{{ item.description }}</h6>
+                    <h6>{{ item.votes }}</h6>
+                    <h6><a class="btn">Up</a></h6>
+                    <h6><a class="btn">Down</a></h6>
+                </div>
+            </div>
+
+
+        </div>
+    </body>
+    <script   src="https://code.jquery.com/jquery-3.1.1.slim.min.js"   integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="   crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+</html>

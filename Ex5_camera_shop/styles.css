@@ -1,0 +1,13 @@
+.priceColor {
+    color: black;
+}
+
+.salePriceColor {
+    color: orange;
+    font-size: large;
+}
+
+.imageSize {
+    max-height: auto;
+    max-width: 100px;
+}
