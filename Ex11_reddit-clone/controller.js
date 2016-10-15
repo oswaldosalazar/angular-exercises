@@ -44,6 +44,7 @@ app.controller("postsController", function($scope) {
     ];
 
     $scope.newPost = {};
+    $scope.newComment = {};
     $scope.list.enterPost = false;
     $scope.list.showComments = false;
     $scope.list.showWriteComment = false;
@@ -86,5 +87,11 @@ app.controller("postsController", function($scope) {
             $scope.list[index].showWriteComment = true;
         }
     }
-
+    $scope.addComment = function(index) {
+        $scope.list[index].comments.push( {
+            'commentAuthor': $scope.newComment.commentAuthor,
+            'commentText': $scope.newComment.commentText
+        });
+        $scope.newComment = {};
+    }
 })
