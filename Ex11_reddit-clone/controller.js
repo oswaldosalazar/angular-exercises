@@ -71,12 +71,14 @@ app.controller("postsController", function($scope) {
     $scope.hideSubmitPost = function () {
         $scope.list.enterPost = false;
     }
-    $scope.showComments = function () {
-        if ($scope.list.showComments) {
-            $scope.list.showComments = false;
+    $scope.showComments = function (index) {
+        if ($scope.list[index].showComments) {
+            $scope.list[index].showComments = false;
         } else {
-            $scope.list.showComments = true;
+            $scope.list[index].showComments = true;
         }
+        console.log($scope.list[index].showComments);
+        console.log($scope.list[index+1].showComments);
     }
 
 })
