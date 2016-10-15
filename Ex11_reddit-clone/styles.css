@@ -18,3 +18,7 @@ p, div, legend {
 .newComment {
     padding-top: 30px;
 }
+
+.navbar-brand {
+    font-weight: bold;
+}

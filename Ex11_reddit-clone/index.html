@@ -46,7 +46,7 @@
                     </div>
                 </div>
             </nav>
-            <form ng-show="list.enterPost" class="container form-horizontal" ng-submit="addPost()">
+            <form ng-show="list.showPostForm" class="container form-horizontal" ng-submit="addPost()">
                 <fieldset>
                     <div class="form-group">
                         <label for="title" class="col-lg-2 control-label">Title</label>
@@ -76,7 +76,7 @@
                         <div class="form-group">
                             <div class="col-lg-10 col-lg-offset-2">
                                 <button type="reset" class="btn btn-default" ng-click="hideSubmitPost()">Cancel</button>
-                                <button type="submit" class="btn btn-primary" ng-click="hideSubmitPost()">Submit</button>
+                                <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                         </div>
                     </div>
@@ -89,8 +89,8 @@
                     </div>
                     <div class="col-sm-8">
                         <h3>{{ item.title }}  |  <strong>{{ item.votes }}</strong>
-                        <a class="btn"><i class="fa fa-lg fa-arrow-up" aria-hidden="true"></i></a>
-                        <a class="btn"><i class="fa fa-lg fa-arrow-down" aria-hidden="true"></i></a>
+                        <a class="btn" ng-click="increaseVotes($index)"><i class="fa fa-lg fa-arrow-up" aria-hidden="true"></i></a>
+                        <a class="btn" ng-click="decreaseVotes($index)"><i class="fa fa-lg fa-arrow-down" aria-hidden="true"></i></a>
                         </h3>
                         <h4>By {{ item.author }}</h4>
                         <h4>{{ item.description }}</h4>
