@@ -14,3 +14,7 @@ p, div, legend {
     display:inline-block;
     padding: 10px;
 }
+
+.newComment {
+    padding-top: 30px;
+}

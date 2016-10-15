@@ -46,6 +46,7 @@ app.controller("postsController", function($scope) {
     $scope.newPost = {};
     $scope.list.enterPost = false;
     $scope.list.showComments = false;
+    $scope.list.showWriteComment = false;
     $scope.list.search = "";
 
     $scope.addPost = function() {
@@ -77,8 +78,13 @@ app.controller("postsController", function($scope) {
         } else {
             $scope.list[index].showComments = true;
         }
-        console.log($scope.list[index].showComments);
-        console.log($scope.list[index+1].showComments);
+    }
+    $scope.showWriteComment = function (index) {
+        if ($scope.list[index].showWriteComment) {
+            $scope.list[index].showWriteComment = false;
+        } else {
+            $scope.list[index].showWriteComment = true;
+        }
     }
 
 })

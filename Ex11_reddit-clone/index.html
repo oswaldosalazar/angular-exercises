@@ -103,7 +103,7 @@
                         <div class="col-sm-4">
 
                                 <i class="fa fa-calendar" aria-hidden="true"></i> {{ item.datePosted | date:'medium' }}
-                            
+
                         </div>
                         <div class="col-sm-4">
                             <a ng-click="showComments($index)">
@@ -111,7 +111,7 @@
                             </a>
                         </div>
                         <div class="col-sm-4">
-                            <a>
+                            <a ng-click="showWriteComment($index)">
                                 <i class="fa fa-pencil-square-o p-l-20px" aria-hidden="true"></i> Add Comment
                             </a>
                         </div>
@@ -119,6 +119,26 @@
                         <div ng-show="item.showComments" class="col-sm-6 col-sm-offset-3">
                             <div ng-repeat="comment in item.comments">
                                 <h5> <strong>{{ comment.commentAuthor }}: </strong> {{ comment.commentText }}</h5>
+                            </div>
+                        </div>
+                        <div ng-show="item.showWriteComment">
+                            <div class="newComment">
+                              	<form class="form-inline">
+                                    <div class="row">
+                                        <div class="form-group">
+                                          <label class="col-md-3" for="commentAuthor">Author</label>
+                                          <div class="col-md-3">
+                                          <input type="text" class="form-control" id="commentAuthor">
+                                        </div>
+                                      </div>
+                                        <div class="form-group">
+                                          <label class="col-md-3" for="commentText">Comment</label>
+                                          <div class="col-md-3">
+                                          <input type="text" class="form-control" id="commentText">
+                                        </div>
+                                      </div>
+                                    </div>
+                               </form>
                             </div>
                         </div>
                     </div>
