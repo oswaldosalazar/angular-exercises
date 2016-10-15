@@ -103,7 +103,7 @@
                             </a>
                         </div>
                         <div class="col-sm-4">
-                            <a ng-click="showWriteComment($index)">
+                            <a ng-click="showCommentForm($index)">
                                 <i class="fa fa-pencil-square-o p-l-20px" aria-hidden="true"></i> Add Comment
                             </a>
                         </div>
@@ -113,7 +113,7 @@
                                 <h5> <strong>{{ comment.commentAuthor }}: </strong> {{ comment.commentText }}</h5>
                             </div>
                         </div>
-                        <div ng-show="item.showWriteComment">
+                        <div ng-show="item.showCommentForm">
                             <div class="newComment">
                               	<form ng-submit="addComment($index)" class="form-inline">
                                     <div class="row">

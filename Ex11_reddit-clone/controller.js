@@ -47,7 +47,7 @@ app.controller("postsController", function($scope) {
     $scope.newComment = {};
     $scope.list.showPostForm = false;
     $scope.list.showComments = false;
-    $scope.list.showWriteComment = false;
+    $scope.list.showCommentForm = false;
     $scope.list.search = "";
 
     $scope.addPost = function() {
@@ -81,11 +81,11 @@ app.controller("postsController", function($scope) {
             $scope.list[index].showComments = true;
         }
     }
-    $scope.showWriteComment = function (index) {
-        if ($scope.list[index].showWriteComment) {
-            $scope.list[index].showWriteComment = false;
+    $scope.showCommentForm = function (index) {
+        if ($scope.list[index].showCommentForm) {
+            $scope.list[index].showCommentForm = false;
         } else {
-            $scope.list[index].showWriteComment = true;
+            $scope.list[index].showCommentForm = true;
         }
     }
     $scope.addComment = function(index) {
@@ -93,6 +93,8 @@ app.controller("postsController", function($scope) {
             'commentAuthor': $scope.newComment.commentAuthor,
             'commentText': $scope.newComment.commentText
         });
+        $scope.list[index].showComments = true;
+        $scope.list[index].showCommentForm = false;
         $scope.newComment = {};
     }
     $scope.increaseVotes = function(index) {
