@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Ex11</title>
+        <title>Real Reddit</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <script src="https://use.typekit.net/tdh2twx.js"></script>
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -14,28 +14,16 @@
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
                     <a class="navbar-brand">Reddit Clone</a>
                     </div>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li><a class="btn" ng-click="showSubmitPost()">+ Submit Post</a></li>
                             <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">One more separated link</a></li>
-                            </ul>
+                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sort by {{ sortType }}<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li ng-repeat="type in sort"><a ng-click="assignType(type)">{{ type }}</a></li>
+                                </ul>
                             </li>
                         </ul>
                         <form class="navbar-form navbar-left" role="search">

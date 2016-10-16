@@ -49,6 +49,12 @@ app.controller("postsController", function($scope) {
     $scope.list.showComments = false;
     $scope.list.showCommentForm = false;
     $scope.list.search = "";
+    $scope.sort = ["Votes", "Date", "Title"];
+    $scope.sortType = "Votes";
+
+    $scope.assignType = function(type) {
+        $scope.sortType = type;
+    }
 
     $scope.addPost = function() {
         $scope.newPost.datePosted = Date.now();
