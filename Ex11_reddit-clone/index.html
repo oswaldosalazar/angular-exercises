@@ -14,7 +14,7 @@
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                    <a class="navbar-brand">Reddit Clone</a>
+                    <a class="navbar-brand">Real Reddit</a>
                     </div>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
@@ -83,7 +83,7 @@
                         <h4>By {{ item.author }}</h4>
                         <h4>{{ item.description }}</h4>
                         <div class="col-sm-4">
-                                <i class="fa fa-calendar" aria-hidden="true"></i> {{ item.date | date:'medium' }}
+                                <i class="fa fa-calendar" aria-hidden="true"></i> {{ item.date | amCalendar }}
                         </div>
                         <div class="col-sm-4">
                             <a ng-click="showComments(item)">
@@ -136,6 +136,8 @@
     <script   src="https://code.jquery.com/jquery-3.1.1.slim.min.js"   integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="   crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0/angular-moment.min.js"></script>
     <script src="app.js"></script>
     <script src="controller.js"></script>
 </html>
