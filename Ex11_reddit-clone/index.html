@@ -87,7 +87,15 @@
                         </div>
                         <div class="col-sm-4">
                             <a ng-click="showComments(item)">
-                                <i class="fa fa-comment p-l" aria-hidden="true"></i> {{ item.comments.length }} Comments
+                                <i class="fa fa-comment p-l" aria-hidden="true"></i> {{ item.comments.length }}
+                                <ng-pluralize
+                                count="item.comments.length"
+                                when="{
+                                    '0': 'Comments',
+                                    'one': 'Comment',
+                                    'other': 'Comments',
+                                }">
+                                <!-- Comments -->
                             </a>
                         </div>
                         <div class="col-sm-4">
