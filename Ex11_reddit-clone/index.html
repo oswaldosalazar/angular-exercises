@@ -70,28 +70,28 @@
                     </div>
                 </fieldset>
             </form>
-            <div ng-repeat="item in list">
+            <div ng-repeat="item in list | orderBy:sortType ">
                 <div class="jumbotron">
                     <div class="col-md-4">
                         <img ng-src={{item.imageUrl}} alt="Mountains" />
                     </div>
                     <div class="col-sm-8">
                         <h3>{{ item.title }}  |  <strong>{{ item.votes }}</strong>
-                        <a class="btn" ng-click="increaseVotes($index)"><i class="fa fa-lg fa-arrow-up" aria-hidden="true"></i></a>
-                        <a class="btn" ng-click="decreaseVotes($index)"><i class="fa fa-lg fa-arrow-down" aria-hidden="true"></i></a>
+                        <a class="btn" ng-click="increaseVotes(item)"><i class="fa fa-lg fa-arrow-up" aria-hidden="true"></i></a>
+                        <a class="btn" ng-click="decreaseVotes(item)"><i class="fa fa-lg fa-arrow-down" aria-hidden="true"></i></a>
                         </h3>
                         <h4>By {{ item.author }}</h4>
                         <h4>{{ item.description }}</h4>
                         <div class="col-sm-4">
-                                <i class="fa fa-calendar" aria-hidden="true"></i> {{ item.datePosted | date:'medium' }}
+                                <i class="fa fa-calendar" aria-hidden="true"></i> {{ item.date | date:'medium' }}
                         </div>
                         <div class="col-sm-4">
-                            <a ng-click="showComments($index)">
+                            <a ng-click="showComments(item)">
                                 <i class="fa fa-comment p-l" aria-hidden="true"></i> {{ item.comments.length }} Comments
                             </a>
                         </div>
                         <div class="col-sm-4">
-                            <a ng-click="showCommentForm($index)">
+                            <a ng-click="showCommentForm(item)">
                                 <i class="fa fa-pencil-square-o p-l-20px" aria-hidden="true"></i> Add Comment
                             </a>
                         </div>
@@ -103,7 +103,7 @@
                         </div>
                         <div ng-show="item.showCommentForm">
                             <div class="newComment">
-                              	<form ng-submit="addComment($index)" class="form-inline">
+                              	<form ng-submit="addComment(item)" class="form-inline">
                                     <div class="row">
                                         <div class="form-group">
                                             <label class="col-md-3" for="commentAuthor">Author</label>
