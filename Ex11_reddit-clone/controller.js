@@ -80,15 +80,6 @@ app.controller("postsController", function($scope) {
     $scope.hideSubmitPost = function () {
         $scope.list.showPostForm = false;
     }
-
-    //
-    //     <a><img src="img/delete.png" ng-click="removeItem(item)">{{$index}}</a>
-    // and modify the removeItem function to find an index using the indexOf method of an array as follows:
-    //
-    // $scope.removeItem = function(item){
-    //    $scope.items.splice($scope.items.indexOf(item),1);
-    // }
-
     $scope.showComments = function (item) {
         if ($scope.list[$scope.list.indexOf(item)].showComments) {
             $scope.list[$scope.list.indexOf(item)].showComments = false;
