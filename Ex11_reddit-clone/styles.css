@@ -22,3 +22,11 @@ p, div, legend {
 .navbar-brand {
     font-weight: bold;
 }
+.positive {
+    color: green;
+}
+.negative {
+    color: red;
+}
+
+/* */

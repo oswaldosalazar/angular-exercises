@@ -76,7 +76,7 @@
                         <img ng-src={{item.imageUrl}} alt="Mountains" />
                     </div>
                     <div class="col-sm-8">
-                        <h3>{{ item.title }}  |  <strong>{{ item.votes }}</strong>
+                        <h3>{{ item.title }}  |  <span ng-class='{positive: item.votes > 0, negative: item.votes <0}'><strong>{{ item.votes }}</strong></span>
                         <a class="btn" ng-click="increaseVotes(item)"><i class="fa fa-lg fa-arrow-up" aria-hidden="true"></i></a>
                         <a class="btn" ng-click="decreaseVotes(item)"><i class="fa fa-lg fa-arrow-down" aria-hidden="true"></i></a>
                         </h3>
