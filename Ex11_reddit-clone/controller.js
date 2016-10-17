@@ -51,8 +51,14 @@ app.controller("postsController", function($scope) {
     $scope.list.search = "";
     $scope.sort = ["votes", "date", "title"];
     $scope.sortType = "votes";
+    $scope.sortTypeReverse = true;
 
     $scope.assignType = function(type) {
+        if(type === "votes" || type === "date") {
+            $scope.sortTypeReverse = true;
+        } else {
+            $scope.sortTypeReverse = false;
+        }
         $scope.sortType = type;
     }
 

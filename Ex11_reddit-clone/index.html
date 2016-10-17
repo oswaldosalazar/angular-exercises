@@ -70,7 +70,7 @@
                     </div>
                 </fieldset>
             </form>
-            <div ng-repeat="item in list | orderBy:sortType | filter: list.search">
+            <div ng-repeat="item in list | orderBy:sortType:sortTypeReverse | filter: list.search">
                 <div class="jumbotron">
                     <div class="col-md-4">
                         <img ng-src={{item.imageUrl}} alt="Mountains" />
